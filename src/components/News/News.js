@@ -29,6 +29,7 @@ function News(props) {
       setLoading(true);
       const parsedData = response.data;
       setArticles(parsedData.articles);
+      console.log(articles)
       setLoading(false);
     } catch (error) {
       console.error(error);
@@ -60,7 +61,8 @@ function News(props) {
                       alt="News image"
                       publishedAt={element.publishedAt}
                       imageUrl={
-                        element.image === null ? NullImage : element.image
+                        element.urlToImage === null ? NullImage :
+                        element.urlToImage
                       }
                       urlNews={element.url}
                     />
